@@ -9,7 +9,6 @@ function mergeSort(arr) {
   const left = new Array();
   const right = new Array(arr.length - mid);
 
-  // fill the left and right array manually
 
   for (let i = 0; i < mid; i++) {
     left[i] = arr[i];
@@ -19,7 +18,7 @@ function mergeSort(arr) {
     right[i - mid] = arr[i];
   }
 
-  // recursively sort both array
+
   const sortLeft = mergeSort(left);
   const sortRight = mergeSort(right);
 
@@ -33,22 +32,22 @@ function merge(left, right) {
     j = 0,
     k = 0;
 
-  // merge the two array
+
   while (i < left.length && j < right.length) {
     if (left[i] < right[j]) {
-      // pointer manually checking each value
+
       result[k++] = left[i++];
     } else {
       result[k++] = right[j++];
     }
   }
 
-  // remaining value copy to result left
+
   while (i < left.length) {
     result[k++] = left[i++];
   }
 
-  // remaining value copy to result right
+
   while (j < right.length) {
     result[k++] = right[j++];
   }
